@@ -1,14 +1,11 @@
 # # #### Inteiros (`int`)
 
 # 1. Escreva um programa que soma dois números inteiros inseridos pelo usuário.
-try: 
-    sum1 = input("Digite um número inteiro: ")
-    sum2 = input("Digite outro número inteiro: ")
+sum1 = input("Digite um número inteiro: ")
+sum2 = input("Digite outro número inteiro: ")
 
-    resultado = int(sum1) + int(sum2)
-    print(resultado)
-except ValueError:
-    print("Valor não aceito! Digite novamente!")
+resultado = int(sum1) + int(sum2)
+print(resultado)
 
 # 2. Crie um programa que receba um número do usuário e calcule o resto da divisão desse número por 5.
 num = int(input("Digite um número: "))
@@ -121,7 +118,67 @@ print(val1 != val2)
 # #### try-except e if
 
 # 21: Conversor de Temperatura
+try:
+    celsius = float(input("Digite a temperatura em Celsius: "))
+    fahrenheit = (celsius * 9/5) + 32
+    print(f'{celsius}° Celsius é igual a {fahrenheit}° Fahrenheit.')
+except ValueError:
+    print("Por favor, digite um número válido para a temperatura.")
+
 # 22: Verificador de Palíndromo
+entrada = input("Digite uma palavra ou frase: ")
+
+if entrada.isalpha(): 
+    formatado = entrada.replace(" ", "").lower()  
+    if formatado == formatado[::-1]: 
+        print("É um palíndromo.")
+    else:
+        print("Não é um palíndromo.")
+else:
+    print("Entrada inválida. Por favor, digite apenas letras.")
+
 # 23: Calculadora Simples
+try:
+    num1 = float(input("Digite o primeiro número: "))
+    num2 = float(input("Digite o segundo número: "))
+    operador = input("Digite o operador (+, -, *, /): ")
+    if operador == '+':
+        resultado = num1 + num2
+    elif operador == '-':
+        resultado = num1 - num2
+    elif operador == '*':
+        resultado = num1 * num2
+    elif operador == '/' and num2 != 0:
+        resultado = num1 / num2
+    else:
+        print("Operador inválido ou divisão por zero.")
+    print("Resultado:", resultado)
+except ValueError:
+    print("Erro: Entrada inválida. Certifique-se de inserir números.")
+
 # 24: Classificador de Números
+try:
+    numero = int(input("Digite um número: "))
+    if numero > 0:
+        print("Positivo")
+    elif numero < 0:
+        print("Negativo")
+    else:
+        print("Zero")
+    if numero % 2 == 0:
+        print("Par")
+    else:
+        print("Ímpar")
+except ValueError:
+    print("Por favor, digite um número inteiro válido.")
+
 # 25: Conversão de Tipo com Validação
+entrada_lista = input("Digite uma lista de números separados por vírgula: ")
+numeros_str = entrada_lista.split(",")
+numeros_int = []
+try:
+    for num in numeros_str:
+        numeros_int.append(int(num.strip()))
+    print("Lista de inteiros:", numeros_int)
+except ValueError:
+    print("Erro: certifique-se de que todos os elementos são números inteiros válidos.")
