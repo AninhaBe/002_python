@@ -1,11 +1,14 @@
 # # #### Inteiros (`int`)
 
 # 1. Escreva um programa que soma dois números inteiros inseridos pelo usuário.
-sum1 = input("Digite um número inteiro: ")
-sum2 = input("Digite outro número inteiro: ")
+try: 
+    sum1 = input("Digite um número inteiro: ")
+    sum2 = input("Digite outro número inteiro: ")
 
-resultado = int(sum1) + int(sum2)
-print(resultado)
+    resultado = int(sum1) + int(sum2)
+    print(resultado)
+except ValueError:
+    print("Valor não aceito! Digite novamente!")
 
 # 2. Crie um programa que receba um número do usuário e calcule o resto da divisão desse número por 5.
 num = int(input("Digite um número: "))
